@@ -1,4 +1,20 @@
 
+# Analysis
+### My findings from the plotted data
+
+##### The average fare in rural areas was not that much higher on average than that of the more urban areas however Rural areas
+###### made up the lowest percentage of rides, while urban areas were the exact opposite in number of rides. likely
+###### due to the distance travelled and lower average cost.
+
+
+
+###### There are fewer drivers the more rural an area is, likely due to the amount of rides taken by people in each of the areas.
+
+
+
+######  The lack of drivers in more rural ares possibly leads to a situation where Pybers brand isnt well known or used in those areas.
+
+
 
 ```python
 import pandas as pd
@@ -188,8 +204,8 @@ urbantotalpercity=Urban2['fare'].sum()
 totalurbanfares=urbantotalpercity.sum()
 totalurbanrides=urbanridespercity.sum()
 
-
-Suburb=Suburban.groupby(['city'])
+Suburban2 = Suburban.drop_duplicates(subset = ["ride_id"], keep="first")
+Suburb=Suburban2.groupby(['city'])
 suburbanavgpercity=Suburb['fare'].mean()
 suburbanridespercity=Suburb['ride_id'].count()
 suburbantotalpercity=Suburb['fare'].sum()
@@ -593,7 +609,7 @@ plt.show()
 ```
 
 
-![png](output_9_0.png)
+![png](output_10_0.png)
 
 
 
@@ -625,7 +641,7 @@ plt.show()
 ```
 
 
-![png](output_11_0.png)
+![png](output_12_0.png)
 
 
 
@@ -641,7 +657,7 @@ plt.show()
 ```
 
 
-![png](output_12_0.png)
+![png](output_13_0.png)
 
 
 
@@ -658,5 +674,5 @@ plt.show()
 ```
 
 
-![png](output_13_0.png)
+![png](output_14_0.png)
 
